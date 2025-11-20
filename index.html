@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ampers&One</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="A website for ANDEAR" />
+    <link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div class="pagebox">
+
+<header>
+    <h1>ANDEARVILLE</h1>
+</header>
+
+<nav>
+    <div class="topnav">
+        <a class="current" href="index.html">Home</a>
+        <a href="#">Content</a>
+        <a href="#">About Us</a>
+    </div>
+</nav>
+
+<article>
+
+
+<section>
+    <h2>Large Image</h2>
+    <p>
+        <img class="bigpic" src="images/brian.jpeg" alt="Picture of Brian Ho of Ampers & One">
+        Here is some text to go along with our large image. This is Brian Ho, one of the main vocalists.
+    </p>
+    <hr/>
+</section>
+
+
+<section>
+    <h2>Small Image</h2>
+    <img class="smallpic" src="images/kyrell.jpeg" alt="Picture of Kyrell Choi of Ampers & One">
+    <p>Here is some text to go along with our "small" image. This is Kyrell Choi, a vocalist and dancer in the group.</p>
+    <hr/>
+</section>
+
+
+<section id="slideshow">
+    <h2>Slideshow</h2>
+
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 2</div>
+            <img src="images/kamden.jpg" style="width:100%">
+            <div class="text">Na Kamden</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 2</div>
+            <img src="images/seungmo.jpg" style="width:100%">
+            <div class="text">Kim Seungmo</div>
+        </div>
+
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+    </div>
+
+    <hr/>
+</section>
+
+
+<section>
+    <h2>Sound</h2>
+    <audio controls>
+        <source src="audio/someday.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <p>Someday by Ampers&One from their second single album One Hearted</p>
+    <hr/>
+</section>
+
+
+<section>
+    <h2>Video</h2>
+    <div class="video_container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/xlJfiyud7lo?si=RixCk-Ch-gglljER"></iframe>
+    </div>
+    <hr/>
+</section>
+
+</article>
+
+<footer>
+    <p>This page was created by Preston &copy; 2025</p>
+</footer>
+
+</div> 
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+
+    if (n > slides.length) { slideIndex = slides.length }
+    if (n < 1) { slideIndex = 1 }
+
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+}
+</script>
+
+</body>
+</html>
